@@ -11,7 +11,7 @@ export const Header = () => {
         Zoran Bailey
       </Link>
 
-      <div className="flex h-[100%]">
+      <div className="flex h-full">
         <Link to={"/about"} className={cx("font-bold", "menuLink")}>
           About
         </Link>

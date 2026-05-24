@@ -5,20 +5,18 @@ const cx = classNames.bind(styles);
 
 export default function More() {
   return (
-    <div>
-      <div className={cx("content")}>
-        <h2 className="text-9xl font-bold" id="#spotify">
-          Spotify
-        </h2>
-        <p>What am i currently listening to?</p>
-        <div className="grid grid-cols-3 gap-y-3 my-6">
-          <VinylRecord />
-          <VinylRecord />
-          <VinylRecord />
-          <VinylRecord />
-          <VinylRecord />
-          <VinylRecord />
-        </div>
+    <div className="container">
+      <h2 className="text-9xl font-bold" id="#spotify">
+        Spotify
+      </h2>
+      <p>What am i currently listening to?</p>
+      <div className="grid grid-cols-3 gap-y-3 my-6">
+        <VinylRecord />
+        <VinylRecord />
+        <VinylRecord />
+        <VinylRecord />
+        <VinylRecord />
+        <VinylRecord />
       </div>
     </div>
   );

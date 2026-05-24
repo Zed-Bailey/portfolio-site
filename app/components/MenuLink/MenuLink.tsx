@@ -87,7 +87,7 @@ export const MenuLink = ({ text, to }: MenuLinkProps) => {
     >
       <h2
         ref={linkRef}
-        className="absolute top-0 left-0 text-7xl uppercase pointer-events-none mix-blend-difference will-change-transform"
+        className="absolute top-0 left-0 text-7xl uppercase pointer-events-none will-change-transform"
       >
         {text}
       </h2>
