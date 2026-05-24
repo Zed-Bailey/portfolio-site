@@ -1,0 +1,19 @@
+.card {
+  position: relative;
+
+  .icon {
+    display: none;
+  }
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card:hover {
+  .icon {
+    display: block;
+  }
+}

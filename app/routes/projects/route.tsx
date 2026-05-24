@@ -15,6 +15,8 @@ export default function Projects() {
         magnam deserunt! Nam itaque iste, dolorem ratione deserunt blanditiis
         odit illo!
       </p>
+
+      <h2 className="text-6xl font-bold py-4">tldr;</h2>
       <div className="grid grid-cols-3 gap-4">
         <Card />
         <Card />
@@ -23,6 +25,13 @@ export default function Projects() {
         <Card />
         <Card />
       </div>
+
+      <h3>Project #1</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo quasi ab
+        voluptatibus porro sint minima soluta, deserunt optio aut quas itaque
+        tempora. Veritatis temporibus fuga aliquam magni sed dolorem. Qui.
+      </p>
     </div>
   );
 }
