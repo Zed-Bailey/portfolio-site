@@ -66,6 +66,13 @@ export const MenuLink = ({ text, to }: MenuLinkProps) => {
         if (linkRef.current) {
           linkRef.current.style.transition = "transform 300ms ease-out";
           linkRef.current.style.transform = "translate(0px,0px)";
+
+          setTimeout(() => {
+            if (linkRef.current) {
+              linkRef.current.style.transition = "";
+              linkRef.current.style.transform = "";
+            }
+          }, 301);
         }
       }}
       onMouseMove={(e) => {

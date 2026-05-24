@@ -1,0 +1,15 @@
+.linkWrapper {
+  .icon {
+    display: none;
+  }
+
+  &:hover {
+    .icon {
+      display: block;
+    }
+  }
+}
+
+.content {
+  margin-bottom: 64px;
+}

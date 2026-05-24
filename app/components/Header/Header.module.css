@@ -1,0 +1,22 @@
+.header {
+  height: 64px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.menuLink {
+  height: 100%;
+  transition: 300ms ease-in-out;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuLink:hover {
+  background-color: black;
+  color: white;
+}

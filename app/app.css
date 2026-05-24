@@ -1,6 +1,26 @@
 @import "tailwindcss";
 
-@layer {
+.link-underline {
+  border-bottom-width: 0;
+  background-image:
+    linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
+}
+
+.link-underline-black {
+  background-image:
+    linear-gradient(transparent, transparent), linear-gradient(#f2c, #f2c);
+}
+
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
+
+@layer reset {
   *,
   *::before,
   *::after {
@@ -8,10 +28,10 @@
     background-repeat: no-repeat;
   }
 
-  * {
+  /* * {
     padding: 0;
     margin: 0;
-  }
+  } */
 
   html {
     -webkit-text-size-adjust: none;
