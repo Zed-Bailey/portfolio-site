@@ -6,6 +6,7 @@ import {
   LinkedInCircle,
   MailCircle,
 } from "~/components/icons/Icons";
+import { Card } from "~/components/Card/Card";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,7 +17,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-2 h-dvh">
+    <section className="grid grid-cols-2 h-dvh">
       <div className="sticky top-0 flex flex-col justify-between">
         <div className="p-4">
           <h3 className="text-3xl font-light text-slate-900">
@@ -47,6 +48,6 @@ export default function Home() {
         <MenuLink text="projects" to="/projects" />
         <MenuLink text="more" to="/more" />
       </div>
-    </div>
+    </section>
   );
 }

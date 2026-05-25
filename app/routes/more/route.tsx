@@ -25,7 +25,7 @@ export default function More() {
 const VinylRecord = () => {
   return (
     <a href="/" className="w-52 h-52 hover:animate-spin">
-      <img src="picture-disk.png" />
+      <img src="picture-disk.webp" />
     </a>
   );
 };

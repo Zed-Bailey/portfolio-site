@@ -17,7 +17,7 @@ export function meta({}: Route.MetaArgs) {
 export default function About() {
   return (
     <div className="py-10 container">
-      <div className={"grid grid-cols-2"}>
+      <section className={"grid grid-cols-2"}>
         <div className="place-self-center flex flex-col items-center">
           <div className="bg-black w-60 h-60 rounded-2xl"></div>
           <span className="text-sm text-slate-600">(my cat not me!)</span>
@@ -38,9 +38,9 @@ export default function About() {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className={cx("content")}>
+      <section className={cx("content", "mt-20")}>
         <h2 className="text-9xl font-bold" id="#work">
           Work
         </h2>
@@ -57,51 +57,54 @@ export default function About() {
 
         <WorkExperience />
         <WorkExperience />
-      </div>
+      </section>
     </div>
   );
 }
 
 const WorkExperience = () => {
   return (
-    <div className="grid grid-cols-2 py-8">
-      <div>
-        <h3 className="text-3xl">Freelance</h3>
-        <span>Oct 2020 - Feb 2021</span>
-        <div className="grid grid-cols-2 mt-2">
-          <div>
-            <p className="text-lg">Technologies</p>
-            <ul className="list-disc">
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-            </ul>
-          </div>
+    <div className="py-8">
+      <h3 className="text-3xl">Freelance</h3>
+      <span>Oct 2020 - Feb 2021</span>
+      <hr className="text-slate-300 py-2" />
+      <div className="grid grid-cols-2">
+        <div>
+          <div className="grid grid-cols-2">
+            <div>
+              <p className="text-lg">Technologies</p>
+              <ul className="list-disc">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+              </ul>
+            </div>
 
-          <div>
-            <p>Skills</p>
-            <ul className="list-disc">
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-            </ul>
+            <div>
+              <p>Skills</p>
+              <ul className="list-disc">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="text-sm">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-          explicabo ipsa deleniti error, exercitationem ipsam animi eligendi
-          aperiam quam quidem iure voluptate quibusdam? Veritatis, debitis magni
-          voluptatibus minus nesciunt praesentium!
-        </p>
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-          explicabo ipsa deleniti error, exercitationem ipsam animi eligendi
-          aperiam quam quidem iure voluptate quibusdam? Veritatis, debitis magni
-          voluptatibus minus nesciunt praesentium!
-        </p>
+        <div className="text-sm">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+            explicabo ipsa deleniti error, exercitationem ipsam animi eligendi
+            aperiam quam quidem iure voluptate quibusdam? Veritatis, debitis
+            magni voluptatibus minus nesciunt praesentium!
+          </p>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+            explicabo ipsa deleniti error, exercitationem ipsam animi eligendi
+            aperiam quam quidem iure voluptate quibusdam? Veritatis, debitis
+            magni voluptatibus minus nesciunt praesentium!
+          </p>
+        </div>
       </div>
     </div>
   );
