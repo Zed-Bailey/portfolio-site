@@ -37,14 +37,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {route.pathname === "/" ? null : <Header />}
+        {/* {route.pathname === "/" ? null : <Header />} */}
 
         {children}
 
         <ScrollRestoration />
         <Scripts />
 
-        {route.pathname === "/" ? null : <Footer />}
+        {/* {route.pathname === "/" ? null : <Footer />} */}
       </body>
     </html>
   );

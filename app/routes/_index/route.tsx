@@ -23,9 +23,7 @@ export default function Home() {
           <h3 className="text-3xl font-light text-slate-900">
             Software Engineer
           </h3>
-          <p className="text-slate-600">
-            Frontend, backend and everything inbetween
-          </p>
+
           <div className="flex gap-4 mt-6">
             <a href="mailto:zoran.bailey@gmail.com">
               <MailCircle size={64} />
@@ -38,9 +36,9 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <h1 className="flex flex-col gap-3 text-[200px]">
-          <span className="font-bold">ZORAN</span>
-          <span className="font-light">BAILEY</span>
+        <h1 className="flex flex-col text-[200px]">
+          <span className="font-extrabold">ZORAN</span>
+          <span className="font-extralight">BAILEY</span>
         </h1>
       </div>
       <div className="grid grid-rows-3">

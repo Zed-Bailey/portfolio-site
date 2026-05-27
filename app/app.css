@@ -28,18 +28,35 @@
   padding-right: 16px;
 }
 
-@layer reset {
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  clip: rect(0 0 0 0);
+}
+
+.visually-hidden-desktop {
+  @media (min-width: 800px) {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    clip: rect(0 0 0 0);
+  }
+}
+
+@layer {
   *,
   *::before,
   *::after {
     box-sizing: border-box;
     background-repeat: no-repeat;
   }
-
-  /* * {
-    padding: 0;
-    margin: 0;
-  } */
 
   html {
     -webkit-text-size-adjust: none;
@@ -50,8 +67,8 @@
   }
 
   body {
-    min-block-size: 100%;
-    background-color: #fffdf6;
+    /* background-color: #fffdf6; */
+    background-color: rgb(247, 245, 243);
   }
 
   img,
