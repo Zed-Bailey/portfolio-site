@@ -1,11 +1,20 @@
 import { useRef, useState } from "react";
-import { Card } from "~/components/Card/Card";
 import styles from "./Route.module.css";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export default function Home2() {
+export function meta() {
+  return [
+    { title: "Zoran Bailey | Software Engineer" },
+    {
+      name: "description",
+      content: "Zoran Bailey | Software Engineer",
+    },
+  ];
+}
+
+export default function Home() {
   const [selected, setSelected] = useState<string>();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -29,7 +38,7 @@ export default function Home2() {
   };
 
   return (
-    <div className="container mt-32">
+    <div className="container mt-10">
       <header className={cx("")}>
         <section className={cx("headerGrid", "gap-20 md:px-6")}>
           <div className="md:w-48 flex  md:flex-col items-center justify-between">
@@ -64,14 +73,34 @@ export default function Home2() {
             </svg>
           </div>
           <div>
-            <p>
-              Hello i'm Zoran! A software engineer from Melbourne, Australia!
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
-              obcaecati sit ut illo accusantium consequatur, quos, laborum sint
-              recusandae atque nemo! Exercitationem inventore facere iste
-              tempora ea repudiandae, maxime praesentium?
+            <h3 className="text-xl font-semibold">Hello 👋 i'm Zoran! </h3>
+            <p className="text-sm">
+              A software engineer from Melbourne, Australia! I love building
+              clean, efficient, and performant user-friendly applications. For
+              me, coding isn't just about making things work—it's about crafting
+              elegant solutions to complex problems and creating digital
+              experiences that feel seamless.
             </p>
-            <p className="my-2">
+
+            <p className="text-sm">
+              I'm always excited to learn new tech, but here are some of the
+              tools, languages, and frameworks I work with most often:
+              <ul className="mt-2">
+                <li>Languages: JavaScript / TypeScript, HTML/CSS</li>
+                <li>Frameworks & Libraries: React, Node.js, React Router</li>
+                <li>Platforms: Shopify, Contentful, Figma</li>
+              </ul>
+            </p>
+
+            <h4 className="text-lg font-semibold mt-6">Beyond the Code ☕</h4>
+            <p>
+              When I'm not staring at VSCode or debugging a stubborn piece of
+              code, you can usually find me exploring my other passions. I'm a
+              big fan of cycling, drinking coffee, and diving deep into
+              algorithmic trading
+            </p>
+            <br />
+            <p className="">
               You can view my work on{" "}
               <UnderLinedHoverLink
                 href="https://github.com/Zed-Bailey"
@@ -87,7 +116,7 @@ export default function Home2() {
               />
             </p>
 
-            <p className="my-2">
+            <p className="">
               Otherwise feel free to get in contact by shooting an email over to{" "}
               <CopyEmailButton />
             </p>
@@ -126,10 +155,11 @@ export default function Home2() {
           <section id="#work" className={cx("contentSection")}>
             <h2 className="text-4xl font-light">WORK</h2>
             <p className="pt-2 pb-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              quasi aliquid perferendis quo quis provident tempora. Repudiandae
-              possimus, optio deserunt asperiores, blanditiis nihil impedit ab
-              nam quod, consequuntur voluptatum natus!
+              Every role I've taken on has been an opportunity to sharpen my
+              skills, collaborate with great teams, and tackle new and exciting
+              technical challenges. My professional background spans many
+              different environments, forcing me to adapt quickly and think
+              critically about system design and user impact.
             </p>
 
             <PositionInfo
@@ -145,17 +175,17 @@ export default function Home2() {
                 </>
               }
               position={"Frontend Software Developer"}
-              description={"lorem"}
+              description={""}
               companyColour="#0055a5"
             />
             <PositionInfo
               company={"Freelance"}
-              date={"2020 - 2021"}
-              description={"Lorem"}
+              date={"2023 - 2024"}
+              description={""}
               position={"Freelance Web Developer"}
             />
 
-            <h3 className="text-4xl font-light my-10">EDUCATION</h3>
+            <h3 className="text-4xl font-light mt-10">EDUCATION</h3>
 
             <PositionInfo
               logoUrl={"logo/rmit.svg"}
@@ -165,62 +195,26 @@ export default function Home2() {
               href={"https://rmit.edu.au"}
               subHeading={"Graduated with Distinction"}
               logoWidth={64}
-              description={"lorem"}
             />
           </section>
 
           <section id="#projects" className={cx("contentSection")}>
-            <h2 className="text-4xl font-light">
+            <h2 className="text-4xl font-light flex flex-col sm:flex-row sm:items-end">
               PROJECTS{" "}
               <span className="text-sm">[ some of my favourites ]</span>
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              quasi aliquid perferendis quo quis provident tempora. Repudiandae
-              possimus, optio deserunt asperiores, blanditiis nihil impedit ab
-              nam quod, consequuntur voluptatum natus!
+              When I'm not working on production code for a job, you'll usually
+              find me building things of my own. My personal projects are my
+              sandbox, where I experiment with new frameworks, automate daily
+              frustrations, and bring creative ideas to life.
             </p>
             <ProjectInfo />
           </section>
 
           <section id="#more" className={cx("contentSection")}>
             <h2 className="text-4xl font-light">MORE</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              quasi aliquid perferendis quo quis provident tempora. Repudiandae
-              possimus, optio deserunt asperiores, blanditiis nihil impedit ab
-              nam quod, consequuntur voluptatum natus!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              quasi aliquid perferendis quo quis provident tempora. Repudiandae
-              possimus, optio deserunt asperiores, blanditiis nihil impedit ab
-              nam quod, consequuntur voluptatum natus!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              quasi aliquid perferendis quo quis provident tempora. Repudiandae
-              possimus, optio deserunt asperiores, blanditiis nihil impedit ab
-              nam quod, consequuntur voluptatum natus!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              quasi aliquid perferendis quo quis provident tempora. Repudiandae
-              possimus, optio deserunt asperiores, blanditiis nihil impedit ab
-              nam quod, consequuntur voluptatum natus!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              quasi aliquid perferendis quo quis provident tempora. Repudiandae
-              possimus, optio deserunt asperiores, blanditiis nihil impedit ab
-              nam quod, consequuntur voluptatum natus!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              quasi aliquid perferendis quo quis provident tempora. Repudiandae
-              possimus, optio deserunt asperiores, blanditiis nihil impedit ab
-              nam quod, consequuntur voluptatum natus!
-            </p>
+            <p>There's nothing here just yet ;)</p>
           </section>
         </div>
       </div>
@@ -251,10 +245,7 @@ const UnderLinedHoverLink = ({
   ...props
 }: React.ComponentProps<"a"> & { label: string | React.ReactNode }) => {
   return (
-    <a
-      {...props}
-      className="group relative px-2 py-1 overflow-hidden rounded-sm font-bold text-sm"
-    >
+    <a {...props} className="group relative px-2 py-1  font-bold text-sm">
       <span
         className={`px-1 relative z-10 group-hover:${textColourHover} ${textColourHover} md:${textColourBase}`}
       >
@@ -271,26 +262,18 @@ const ProjectInfo = () => {
   return (
     <div className="my-10">
       <h3 className="text-3xl font-light">
-        Project #1{" "}
-        <span className="text-sm">
-          [ a project to make everyone feel better ]
-        </span>
+        Tradeinator{" "}
+        <span className="text-sm">[ a modular algotrading framework ]</span>
       </h3>
 
       <div className="mb-4 mt-2 flex gap-4 items-center">
-        <UnderLinedHoverLink label="Github" href="https://github.com" />
+        <UnderLinedHoverLink
+          label="Github"
+          href="https://github.com/Zed-Bailey/Tradeinator"
+        />
         <img src="logo/typescript.svg" className="w-5 h-5 " />
       </div>
-      <p>
-        This project Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Rem amet voluptatem odio, est at id velit cumque temporibus dolorum
-        blanditiis consectetur labore quas dicta, non, tempore necessitatibus
-        fuga mollitia tenetur?
-      </p>
-
-      <div className="mt-5">
-        <div className="w-full max-w-60 h-40 bg-black rounded-xl"></div>
-      </div>
+      <p>work in progress</p>
     </div>
   );
 };
@@ -337,7 +320,7 @@ const CopyEmailButton = () => {
   const [copied, setCopied] = useState(false);
 
   const onClick = () => {
-    navigator.clipboard.writeText("zoranbaliey@gmail.com").finally(() => {
+    navigator.clipboard.writeText("zoranbailey@gmail.com").finally(() => {
       setCopied(true);
       setTimeout(() => {
         setCopied(false);
@@ -348,7 +331,7 @@ const CopyEmailButton = () => {
   return (
     <button className={cx("copyButton", "mt-4")} onClick={onClick}>
       <code className={cx("fore")}>
-        zoranbaliey@gmail.com{" "}
+        zoranbailey@gmail.com{" "}
         <span className={cx("copyText", "font-extralight", "text-[10px]")}>
           [{copied ? "copied" : "copy"}]
         </span>
