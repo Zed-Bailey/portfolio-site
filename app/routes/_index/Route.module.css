@@ -10,6 +10,10 @@
   }
 }
 
+.stickyHeader {
+  z-index: 999;
+}
+
 @media (max-width: 799px) {
   .menu {
     display: grid;
@@ -27,10 +31,10 @@
       position: sticky;
       top: 0;
       flex-direction: row;
-      gap: 8px;
       backdrop-filter: blur(16px);
-      width: 100%;
       overflow: auto;
+      margin-left: -16px;
+      margin-right: -16px;
     }
   }
 }
@@ -39,12 +43,8 @@
   .menu {
     display: grid;
     transition: 300ms;
-    grid-template-rows: auto auto auto;
-
-    @media (min-width: 800px) {
-      grid-template-rows: auto;
-      grid-template-columns: 1fr 200px 1fr;
-    }
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 200px 1fr;
 
     &:not(&.selected) {
       [data-selected="true"] {
@@ -71,6 +71,51 @@
     .stickyHeader {
       position: sticky;
       top: 3rem;
+    }
+  }
+}
+
+.contentSection {
+  margin-bottom: 200px;
+  @media (min-width: 800px) {
+    margin-bottom: 400px;
+  }
+}
+
+.copyButton {
+  position: relative;
+  background: black;
+  height: 40px;
+  border-radius: 4px;
+  width: 300px;
+  cursor: pointer;
+  display: block;
+
+  .fore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    transform: translateY(-8px) translateX(-6px);
+    outline: 2px solid black;
+    background: rgb(247, 245, 243);
+    height: 40px;
+    transition: transform 150ms ease-in-out;
+    overflow: hidden;
+
+    .copyText {
+      transform: translateX(100px);
+      transition: transform 250ms ease;
+    }
+
+    .copyButton:hover & {
+      .copyText {
+        transform: translateX(-2px);
+      }
+    }
+    .copyButton:active & {
+      transform: translateY(-2px);
     }
   }
 }
