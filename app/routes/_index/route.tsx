@@ -240,14 +240,13 @@ const HoverButton = ({ onClick, label, ...props }) => {
 const UnderLinedHoverLink = ({
   label,
   background = "bg-black",
-  textColourBase = "text-black",
   textColourHover = "text-white",
   ...props
 }: React.ComponentProps<"a"> & { label: string | React.ReactNode }) => {
   return (
-    <a {...props} className="group relative px-2 py-1  font-bold text-sm">
+    <a {...props} className="group relative px-2 py-1 font-bold text-sm">
       <span
-        className={`px-1 relative z-10 group-hover:${textColourHover} ${textColourHover} md:${textColourBase}`}
+        className={`px-1 relative z-10 group-hover:${textColourHover} ${textColourHover} md:text-black`}
       >
         {label}
       </span>
