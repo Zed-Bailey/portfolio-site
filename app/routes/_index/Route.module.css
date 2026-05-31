@@ -87,7 +87,7 @@
   background: black;
   height: 40px;
   border-radius: 4px;
-  width: 300px;
+  width: 100%;
   cursor: pointer;
   display: block;
 
@@ -95,7 +95,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
     border-radius: 4px;
     transform: translateY(-8px) translateX(-6px);
     outline: 2px solid black;
@@ -103,9 +102,10 @@
     height: 40px;
     transition: transform 150ms ease-in-out;
     overflow: hidden;
+    gap: 8px;
 
     .copyText {
-      transform: translateX(100px);
+      transform: translateX(1000px);
       transition: transform 250ms ease;
     }
 
@@ -116,6 +116,29 @@
     }
     .copyButton:active & {
       transform: translateY(-2px);
+    }
+  }
+}
+
+.hoverLink {
+  .hoverLinkLabel {
+    color: white;
+    padding: 4px 0;
+    position: relative;
+    z-index: 10;
+
+    @media (min-width: 768px) {
+      color: black;
+    }
+  }
+
+  &:hover {
+    .hoverLinkLabel {
+      color: white;
+    }
+
+    .hoverLinkUnderline {
+      height: 100%;
     }
   }
 }

@@ -239,19 +239,21 @@ const HoverButton = ({ onClick, label, ...props }) => {
 
 const UnderLinedHoverLink = ({
   label,
-  background = "bg-black",
+  background = "bg-[black]",
   textColourHover = "text-white",
   ...props
 }: React.ComponentProps<"a"> & { label: string | React.ReactNode }) => {
   return (
-    <a {...props} className="group relative px-2 py-1 font-bold text-sm">
+    <a
+      {...props}
+      className={cx("hoverLink", "relative px-2 py-1 font-bold text-sm")}
+    >
+      <span className={cx("hoverLinkLabel")}>{label}</span>
       <span
-        className={`px-1 relative z-10 group-hover:${textColourHover} ${textColourHover} md:text-black`}
-      >
-        {label}
-      </span>
-      <span
-        className={`absolute left-0 bottom-0 w-full h-full md:h-0.5 transition-all ${background} z-0 group-hover:h-full`}
+        className={cx(
+          "hoverLinkUnderline",
+          `absolute left-0 bottom-0 w-full h-full md:h-0.5 transition-all ${background} z-0`,
+        )}
       ></span>
     </a>
   );
@@ -260,7 +262,7 @@ const UnderLinedHoverLink = ({
 const ProjectInfo = () => {
   return (
     <div className="my-10">
-      <h3 className="text-3xl font-light">
+      <h3 className="text-3xl font-light flex flex-col md:flex-row md:items-end">
         Tradeinator{" "}
         <span className="text-sm">[ a modular algotrading framework ]</span>
       </h3>
@@ -270,7 +272,6 @@ const ProjectInfo = () => {
           label="Github"
           href="https://github.com/Zed-Bailey/Tradeinator"
         />
-        <img src="logo/typescript.svg" className="w-5 h-5 " />
       </div>
       <p>work in progress</p>
     </div>
@@ -298,7 +299,12 @@ const PositionInfo = ({
         target={href ? "_blank" : undefined}
       >
         {logoUrl ? (
-          <img src={logoUrl} width={logoWidth} className="rounded-sm" />
+          <img
+            src={logoUrl}
+            width={logoWidth}
+            className="rounded-sm"
+            alt={`${company} logo`}
+          />
         ) : null}
         <span className={`text-[${companyColour}] font-semibold text-md`}>
           {company}
