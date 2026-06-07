@@ -12,11 +12,17 @@
     "@react-router/fs-routes": "^7.15.1",
     "@react-router/node": "7.15.1",
     "@react-router/serve": "7.15.1",
+    "@react-three/fiber": "^9.6.1",
+    "@shadergradient/react": "^2.4.20",
+    "@xyflow/react": "^12.11.0",
+    "camera-controls": "^3.1.2",
     "classnames": "^2.5.1",
     "isbot": "^5.1.36",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-router": "7.15.1"
+    "react-router": "7.15.1",
+    "three": "^0.184.0",
+    "three-stdlib": "^2.36.1"
   },
   "devDependencies": {
     "@react-router/dev": "7.15.1",
