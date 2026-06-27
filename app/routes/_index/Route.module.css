@@ -143,3 +143,35 @@ section {
     font-size: 14px;
   }
 }
+
+.markdownContent {
+  color: var(--text-primary);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Gloock", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 8px 0;
+  }
+
+  ul,
+  ol,
+  p {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 300;
+    text-align: justify;
+    font-size: 14px;
+  }
+
+  hr {
+    opacity: 0;
+    margin: 32px 0;
+  }
+}

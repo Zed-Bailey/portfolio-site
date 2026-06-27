@@ -1,6 +1,14 @@
-import { type MouseEvent } from "react";
+import { type MouseEvent, type PropsWithChildren } from "react";
 import styles from "./Route.module.css";
 import classNames from "classnames/bind";
+import Path from "node:path";
+import { useLoaderData } from "react-router";
+import Markdown from "react-markdown";
+
+const mdContent = import.meta.glob("./content/*.md", {
+  query: "?raw",
+  import: "default",
+});
 
 const cx = classNames.bind(styles);
 
@@ -14,7 +22,21 @@ export function meta() {
   ];
 }
 
+export async function loader() {
+  const content = new Map<string, string>();
+
+  for (const path in mdContent) {
+    const data = await mdContent[path]();
+    const name = Path.parse(path).name;
+    content.set(name, data as string);
+  }
+
+  return { content };
+}
+
 export default function Home() {
+  const { content } = useLoaderData<typeof loader>();
+
   return (
     <div className={cx("container")}>
       <header className={cx("header")}>
@@ -130,40 +152,15 @@ export default function Home() {
       </ContentSection>
 
       <ContentSection heading={"Projects"} headingId={"projects"}>
-        <div>
-          <a href="https://github.com/Zed-Bailey/Tradeinator">Tradeinator</a>
-          <p className={cx("geist", "light")}>
-            A modular, event driven, algorithmic trading system
-            <br />
-            The goal of this project was to develop a module based trading
-            system. Built around a RabbitMQ event bus, strategies and modules
-            would connect to and consume events other modules would fire.
-            <br />
-            One requirement i had when developing it was to support hot
-            reloading of strategy parameters to allow real time adjustment to
-            strategies, this presented some interesting technical problems on
-            how to serialise strategeys and how to dynamically update their
-            state without affecting any existing state
-          </p>
+        <div className={cx("markdownContent")}>
+          <Markdown>{content.get("projects")}</Markdown>
         </div>
       </ContentSection>
 
       <ContentSection heading={"Books"} headingId={"books"}>
-        <p className={cx("geist", "light")}>
-          As an avid reader, here are some books that i've really enjoyed
-          reading, in no particular order
-        </p>
-        <ul className={cx("geist")}>
-          <li>2312 - Kim Stanley Robinson</li>
-          <li>The Stormlight Archive Series - Brandon Sanderson</li>
-          <li>Mistborn Series - Brandon Sanderson</li>
-          <li>The Martian - Andy Weir</li>
-          <li>Project Hail Mary - Andy Weir</li>
-          <li>Red Rising Saga - Pierce Brown</li>
-          <li>The Expanse - James S. A. Corey</li>
-          <li>Commonwealth Saga - Peter F. Hamilton</li>
-          <li>Altered Carbon - Richard Morgan</li>
-        </ul>
+        <div className={cx("markdownContent")}>
+          <Markdown>{content.get("books")}</Markdown>
+        </div>
       </ContentSection>
 
       <ContentSection heading={"Contact"} headingId={"contact"}>
@@ -207,9 +204,18 @@ const NavItem = ({
   );
 };
 
-const ContentSection = ({ heading, headingId, children }) => {
+const ContentSection = ({
+  heading,
+  headingId,
+  children,
+  className,
+}: {
+  heading: string;
+  headingId: string;
+  className?: string;
+} & PropsWithChildren) => {
   return (
-    <section id={headingId} className={cx("contentSection")}>
+    <section id={headingId} className={cx("contentSection", className)}>
       <h3 className="gloock">{heading}</h3>
       {children}
     </section>
