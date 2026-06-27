@@ -30,8 +30,6 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const route = useLocation();
-
   return (
     <html lang="en">
       <head>
@@ -41,14 +39,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {/* {route.pathname === "/" ? null : <Header />} */}
-
         {children}
-
         <ScrollRestoration />
         <Scripts />
-
-        {/* {route.pathname === "/" ? null : <Footer />} */}
       </body>
     </html>
   );
