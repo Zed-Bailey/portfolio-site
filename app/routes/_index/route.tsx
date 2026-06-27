@@ -167,7 +167,7 @@ export default function Home() {
       <section className={cx("gallery")}>
         <h3>Gallery</h3>
 
-        <img src="princess.webp" alt="my princess chocy" />
+        <img src="princess.webp" alt="my princess chocy" loading="lazy" />
         <p>A picture of my cat, chocy</p>
       </section>
     </div>

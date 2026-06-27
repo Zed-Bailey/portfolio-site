@@ -145,8 +145,6 @@ section {
 }
 
 .markdownContent {
-  color: var(--text-primary);
-
   h1,
   h2,
   h3,
@@ -196,6 +194,7 @@ section {
 
   img {
     border-radius: 8px;
-    overflow: hidden;
+    width: 100%;
+    height: auto;
   }
 }
