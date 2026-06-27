@@ -75,8 +75,8 @@ export default function Home() {
           applications.
           <br />
           <br />
-          When i'm not working, i'm often out cycling the countryside or reading
-          a good book.
+          When i'm not working, i'm often out cycling the countryside, reading a
+          good book or developing algorithmic trading systems.
         </p>
       </ContentSection>
 
@@ -129,7 +129,24 @@ export default function Home() {
         </div>
       </ContentSection>
 
-      <ContentSection></ContentSection>
+      <ContentSection heading={"Projects"} headingId={"projects"}>
+        <div>
+          <a href="https://github.com/Zed-Bailey/Tradeinator">Tradeinator</a>
+          <p className={cx("geist", "light")}>
+            A modular, event driven, algorithmic trading system
+            <br />
+            The goal of this project was to develop a module based trading
+            system. Built around a RabbitMQ event bus, strategies and modules
+            would connect to and consume events other modules would fire.
+            <br />
+            One requirement i had when developing it was to support hot
+            reloading of strategy parameters to allow real time adjustment to
+            strategies, this presented some interesting technical problems on
+            how to serialise strategeys and how to dynamically update their
+            state without affecting any existing state
+          </p>
+        </div>
+      </ContentSection>
 
       <ContentSection heading={"Books"} headingId={"books"}>
         <p className={cx("geist", "light")}>
