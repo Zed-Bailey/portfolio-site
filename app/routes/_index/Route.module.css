@@ -12,7 +12,7 @@
   }
 
   --text-primary: #2c2c2c;
-  --background: rgb(247, 245, 243);
+  --background: #f7f5f3;
 
   :where(p, span) {
     font-family: "Geist", sans-serif;
@@ -173,5 +173,29 @@ section {
   hr {
     opacity: 0;
     margin: 32px 0;
+  }
+}
+
+.gallery {
+  p {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 300;
+    text-align: justify;
+    font-size: 14px;
+  }
+  h3 {
+    font-size: 18px;
+    margin-bottom: 24px;
+
+    @media (min-width: 31.25rem) {
+      margin-bottom: 48px;
+    }
+  }
+
+  img {
+    border-radius: 8px;
+    overflow: hidden;
   }
 }

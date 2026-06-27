@@ -3,8 +3,9 @@ import styles from "./Route.module.css";
 import classNames from "classnames/bind";
 import Path from "node:path";
 import { useLoaderData } from "react-router";
-import Markdown from "react-markdown";
+import Markdown, { type Components } from "react-markdown";
 
+// import the markdown files as raw strings
 const mdContent = import.meta.glob("./content/*.md", {
   query: "?raw",
   import: "default",
@@ -17,7 +18,8 @@ export function meta() {
     { title: "Zoran Bailey | Software Engineer" },
     {
       name: "description",
-      content: "Hi I'm Zoran Bailey a Software Engineer, this is my portfolio!",
+      content:
+        "Hi I'm Zoran Bailey a Software Engineer and this is my portfolio!",
     },
   ];
 }
@@ -25,6 +27,7 @@ export function meta() {
 export async function loader() {
   const content = new Map<string, string>();
 
+  // maps the filename to the content for lookup later on
   for (const path in mdContent) {
     const data = await mdContent[path]();
     const name = Path.parse(path).name;
@@ -35,8 +38,6 @@ export async function loader() {
 }
 
 export default function Home() {
-  const { content } = useLoaderData<typeof loader>();
-
   return (
     <div className={cx("container")}>
       <header className={cx("header")}>
@@ -116,7 +117,7 @@ export default function Home() {
             Frontend Software Engineer, 2024 - Present
           </p>
           <p className={cx("description", "geist", "light")}>
-            Working extensivley with react router, html, css, typescript,
+            Working extensivley with React, React Router, HTML, CSS, TypeScript,
             shopify hydrogen, contentful cms, algolia. Building reusable
             components.
             <br />
@@ -152,30 +153,44 @@ export default function Home() {
       </ContentSection>
 
       <ContentSection heading={"Projects"} headingId={"projects"}>
-        <div className={cx("markdownContent")}>
-          <Markdown>{content.get("projects")}</Markdown>
-        </div>
+        <MarkdownContent id="projects" />
       </ContentSection>
 
       <ContentSection heading={"Books"} headingId={"books"}>
-        <div className={cx("markdownContent")}>
-          <Markdown>{content.get("books")}</Markdown>
-        </div>
+        <MarkdownContent id="books" />
       </ContentSection>
 
       <ContentSection heading={"Contact"} headingId={"contact"}>
-        <p>Looking to get in touch?</p>
-        <p>
-          Feel free to send an email to <b>zoran.bailey@gmail.com</b> or come
-          say hi on{" "}
-          <a href="https://www.linkedin.com/in/zoran-bailey/" target="_blank">
-            Linkedin
-          </a>
-        </p>
+        <MarkdownContent id="contact" />
       </ContentSection>
+
+      <section className={cx("gallery")}>
+        <h3>Gallery</h3>
+
+        <img src="princess.webp" alt="my princess chocy" />
+        <p>A picture of my cat, chocy</p>
+      </section>
     </div>
   );
 }
+
+const markdownComponent: Components = {
+  a(props) {
+    return <a {...props} target="_blank" />;
+  },
+};
+
+const MarkdownContent = ({ id }: { id: string }) => {
+  const { content } = useLoaderData<typeof loader>();
+
+  return (
+    <div className={cx("markdownContent")}>
+      <Markdown components={markdownComponent}>
+        {content.get(id) ?? ""}
+      </Markdown>
+    </div>
+  );
+};
 
 function scrollTo(e: MouseEvent<HTMLAnchorElement>, link: string) {
   const element = document.getElementById(link);

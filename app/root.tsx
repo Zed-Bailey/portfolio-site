@@ -5,12 +5,9 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLocation,
 } from "react-router";
-import { Footer } from "./components/Footer/Footer";
 import type { Route } from "./+types/root";
 import "./app.css";
-import { Header } from "./components/Header/Header";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
