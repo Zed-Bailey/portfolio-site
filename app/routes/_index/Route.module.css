@@ -1,144 +1,121 @@
-.headerGrid {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 20px;
+.container {
+  max-width: 31.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-left: 16px;
+  padding-right: 16px; */
 
-  @media (min-width: 800px) {
-    grid-template-rows: auto;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 80px;
+  --text-primary: #2c2c2c;
+  --background: rgb(247, 245, 243);
+
+  :where(p, span) {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  color: var(--text-primary);
+
+  :where(a) {
+    color: var(--text-primary);
   }
 }
 
-.stickyHeader {
-  z-index: 999;
+section {
+  margin-bottom: 180px;
 }
 
-@media (max-width: 799px) {
-  .menu {
-    display: grid;
-    transition: 300ms;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 1fr;
+.stretch {
+  text-align: justify;
+}
 
-    [data-selected="true"] {
-      background-color: black;
-      color: white;
-      font-weight: bold;
-    }
+.geist {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 
-    .stickyHeader {
-      position: sticky;
-      top: 0;
-      flex-direction: row;
-      backdrop-filter: blur(16px);
-      overflow: auto;
-      margin-left: -16px;
-      margin-right: -16px;
-    }
+  &.semibold {
+    font-weight: 600;
+  }
+
+  &.light {
+    font-weight: 300;
   }
 }
 
-@media (min-width: 800px) {
-  .menu {
-    display: grid;
-    transition: 300ms;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 200px 1fr;
+.gloock {
+  font-family: "Gloock", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-    &:not(&.selected) {
-      [data-selected="true"] {
-        transition: all;
-        transition-delay: 300ms;
-      }
-    }
+.header {
+  width: 100%;
+  margin-bottom: 64px;
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-left: auto;
+    justify-content: flex-end;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+}
 
-    [data-selected="true"] {
-      background-color: black;
-      color: white;
-      font-weight: bold;
-    }
+.intro {
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+.navGrid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 48px 16px;
+}
+
+.navItem {
+  width: 100%;
+  max-width: 155px;
+  height: 53px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text-primary);
+  text-decoration: none;
+
+  h2 {
+    font-size: 18px;
   }
 
-  .selected {
-    grid-template-columns: 0fr auto 1fr;
+  p {
+    font-size: 14px;
+  }
 
-    .content {
-      width: auto;
-      overflow: visible;
-    }
-
-    .stickyHeader {
-      position: sticky;
-      top: 3rem;
-    }
+  &:hover {
+    text-decoration: underline;
   }
 }
 
 .contentSection {
-  margin-bottom: 200px;
-  @media (min-width: 800px) {
-    margin-bottom: 400px;
+  font-size: 16px;
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 48px;
   }
 }
 
-.copyButton {
-  position: relative;
-  background: black;
-  height: 40px;
-  border-radius: 4px;
-  width: 100%;
-  cursor: pointer;
-  display: block;
+.position {
+  margin-bottom: 64px;
 
-  .fore {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    transform: translateY(-8px) translateX(-6px);
-    outline: 2px solid black;
-    background: rgb(247, 245, 243);
-    height: 40px;
-    transition: transform 150ms ease-in-out;
-    overflow: hidden;
-    gap: 8px;
-
-    .copyText {
-      transform: translateX(1000px);
-      transition: transform 250ms ease;
-    }
-
-    .copyButton:hover & {
-      .copyText {
-        transform: translateX(-2px);
-      }
-    }
-    .copyButton:active & {
-      transform: translateY(-2px);
-    }
-  }
-}
-
-.hoverLink {
-  .hoverLinkLabel {
-    color: white;
-    padding: 4px 0;
-    position: relative;
-    z-index: 10;
-
-    @media (min-width: 768px) {
-      color: black;
-    }
-  }
-
-  &:hover {
-    .hoverLinkLabel {
-      color: white;
-    }
-
-    .hoverLinkUnderline {
-      height: 100%;
-    }
+  .description {
+    font-size: 14px;
   }
 }
