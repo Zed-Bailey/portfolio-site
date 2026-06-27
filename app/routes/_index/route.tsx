@@ -9,7 +9,7 @@ export function meta() {
     { title: "Zoran Bailey | Software Engineer" },
     {
       name: "description",
-      content: "Zoran Bailey | Software Engineer",
+      content: "Hi I'm Zoran Bailey a Software Engineer, this is my portfolio!",
     },
   ];
 }
@@ -129,6 +129,8 @@ export default function Home() {
         </div>
       </ContentSection>
 
+      <ContentSection></ContentSection>
+
       <ContentSection heading={"Books"} headingId={"books"}>
         <p className={cx("geist", "light")}>
           As an avid reader, here are some books that i've really enjoyed
@@ -150,7 +152,7 @@ export default function Home() {
       <ContentSection heading={"Contact"} headingId={"contact"}>
         <p>Looking to get in touch?</p>
         <p>
-          Feel free to send me an email at <b>zoran.bailey@gmail.com</b> or come
+          Feel free to send an email to <b>zoran.bailey@gmail.com</b> or come
           say hi on{" "}
           <a href="https://www.linkedin.com/in/zoran-bailey/" target="_blank">
             Linkedin

@@ -2,8 +2,14 @@
   max-width: 31.25rem;
   margin-left: auto;
   margin-right: auto;
-  /* padding-left: 16px;
-  padding-right: 16px; */
+  padding-bottom: 64px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  @media (min-width: 31.25rem) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   --text-primary: #2c2c2c;
   --background: rgb(247, 245, 243);
@@ -12,6 +18,7 @@
     font-family: "Geist", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    text-align: justify;
   }
 
   color: var(--text-primary);
@@ -22,7 +29,11 @@
 }
 
 section {
-  margin-bottom: 180px;
+  margin-bottom: 90px;
+
+  @media (min-width: 31.25rem) {
+    margin-bottom: 180px;
+  }
 }
 
 .stretch {
@@ -75,9 +86,14 @@ section {
 .navGrid {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 48px 16px;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: 31.25rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 48px 16px;
+  }
 }
 
 .navItem {
@@ -86,9 +102,13 @@ section {
   height: 53px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   color: var(--text-primary);
   text-decoration: none;
+
+  @media (min-width: 31.25rem) {
+    gap: 16px;
+  }
 
   h2 {
     font-size: 18px;
@@ -108,7 +128,11 @@ section {
 
   h3 {
     font-size: 18px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+
+    @media (min-width: 31.25rem) {
+      margin-bottom: 48px;
+    }
   }
 }
 
