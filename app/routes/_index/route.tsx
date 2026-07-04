@@ -1,8 +1,6 @@
-import { type MouseEvent, type PropsWithChildren } from "react";
 import styles from "./Route.module.css";
 import classNames from "classnames/bind";
 import { data, useLoaderData } from "react-router";
-import Markdown, { type Components } from "react-markdown";
 import contentfulClient from "~/lib/contentful/apiClient.server";
 import { ContentfulRichtext } from "~/components/ContentfulRichtext/ContentfulRichText";
 import type { Route } from "./+types/route";
@@ -99,13 +97,12 @@ export default function Home() {
 
       <ContentfulRichtext richText={content?.json} />
 
-      {pageSectionsCollection.items?.map((section) => {
-        if (!section.content?.json) return null;
+      {pageSectionsCollection?.items?.map((section) => {
+        if (!section?.content?.json) return null;
 
         return (
-          <section key={section.sectionId} id={section.sectionId}>
+          <section key={section.sys.id} id={section.sectionId}>
             <ContentfulRichtext
-              key={section.sectionId}
               richText={section.content.json}
               className={cx("markdownContent")}
             />
@@ -115,19 +112,13 @@ export default function Home() {
 
       <section className={cx("gallery")}>
         <h3>Gallery</h3>
-
+        <p>You've made it this far! so here's a picture of my cat :)</p>
+        <br />
         <img src="princess.webp" alt="my princess chocy" loading="lazy" />
-        <p>A picture of my cat, chocy</p>
       </section>
     </div>
   );
 }
-
-const markdownComponent: Components = {
-  a(props) {
-    return <a {...props} target="_blank" />;
-  },
-};
 
 const NavItem = ({
   header,
