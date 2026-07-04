@@ -6,4 +6,7 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  ssr: {
+    noExternal: ["@contentful/rich-text-react-renderer"],
+  },
 });
