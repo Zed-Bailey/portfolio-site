@@ -123,27 +123,6 @@ section {
   }
 }
 
-.contentSection {
-  font-size: 16px;
-
-  h3 {
-    font-size: 18px;
-    margin-bottom: 24px;
-
-    @media (min-width: 31.25rem) {
-      margin-bottom: 48px;
-    }
-  }
-}
-
-.position {
-  margin-bottom: 64px;
-
-  .description {
-    font-size: 14px;
-  }
-}
-
 .markdownContent {
   h1,
   h2,
@@ -166,6 +145,10 @@ section {
     font-weight: 300;
     text-align: justify;
     font-size: 14px;
+  }
+
+  b {
+    font-weight: 700;
   }
 
   hr {

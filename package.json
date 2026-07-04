@@ -9,6 +9,8 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.2.1",
+    "@contentful/rich-text-types": "^17.2.7",
     "@react-router/fs-routes": "^7.15.1",
     "@react-router/node": "7.15.1",
     "@react-router/serve": "7.15.1",
